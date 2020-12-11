@@ -1,0 +1,71 @@
+<html>
+    <!-- HTML comment
+        Julien West
+        Series of Integers
+        Ask the user for an array of integers and sort and output the positive and negative seperately
+    -->
+    <head>
+        <title>Julien West</title>
+        <script>
+
+
+        </script>
+    </head>
+    <body>
+        <h1>Series of Integers - Julien West</h1>
+        <script>
+            /*
+                Julien West
+                Series of Integers
+                Ask the user for an array of integers and sort and output the positive and negative seperately
+            */
+
+            //Create array to store user input into
+            var inputArray = [];
+
+            //Request and store integer input from user while they'd still like to enter data
+            do
+            {
+                //Prompt user for integer input and store it converted to a integer                       
+                inputArray.push(parseInt(prompt("Input a positive or negative integer", 3)));
+                
+            } while (confirm("Would you like to input more integers?")) //Confirm whether user would like to input more data 
+
+            //Create two arrays to store both positive and negative integers and their respective sums
+            var positiveArray = [];
+            var positiveSum = 0;
+            var negativeArray = [];
+            var negativeSum = 0;
+
+            //Parse user input array into positive and negative arrays
+            for (var i = 0; i < inputArray.length; i++)
+            {
+                //Store input in positive array if positive
+                if (inputArray[i] > 0)
+                {
+                    //Store value
+                    positiveArray.push(inputArray[i]);
+
+                    //Add value to positive total
+                    positiveSum += inputArray[i];
+                }
+                //Store input in negative array if negative
+                else if (inputArray[i] < 0)
+                {
+                    //Store value
+                    negativeArray.push(inputArray[i]);
+
+                    //Add value to negative total
+                    negativeSum += inputArray[i];
+                }
+            }
+
+            //Output results
+            document.write("You entered the following negative integers: " + negativeArray.toString() + "<br>");
+            document.write("The sum of all negative integers is: " + negativeSum + "<br>");
+            document.write("You entered the following positive integers: " + positiveArray.toString() + "<br>");
+            document.write("The sum of all positive integers is: " + positiveSum);
+
+        </script>
+    </body>
+</html>

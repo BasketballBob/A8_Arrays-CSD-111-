@@ -1,0 +1,76 @@
+<html>
+    <!-- HTML comment
+        Julien West
+        Array Analysis Function
+        Counts and outputs the amount of times a numbers exists within a given array
+    -->
+    <head>
+        <title>Julien West</title>
+        <script>
+
+            //Counts and returns the amount of times a numbers exists within a given array
+            function countOccurences(numArray, num)
+            {
+                //Create variable to track times repeated
+                var timesRepeated = 0;
+
+                //Check entire array for "num"
+                for (var i = 0; i < numArray.length; i++)
+                {
+                    //Check if array value is "num"
+                    if (numArray[i] == num)
+                    {
+                        //If so, increment "timesRepeated" value
+                        timesRepeated++;
+                    }
+                }
+
+                //Return final result for times repeated
+                return timesRepeated;
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Functions that return a value - Julien West</h1>
+        <script>
+            /*
+                Julien West
+                Array Analysis Function
+                Counts and outputs the amount of times a numbers exists within a given array
+            */
+
+            //Create array to test countOccurences function
+            var testArray = [1, 1, 5, 6, 2, 11, 1, 6, 0];
+
+            //Create a variable to represent the number being parsed for 
+            var testNumber = 1;
+
+            //Call function and determine totalInstances of 1
+            var totalInstances = countOccurences(testArray, testNumber);
+
+            //Output beginning of result
+            document.write("The number of occurences of " + testNumber + " in ");
+
+            //Output array within result using a for loop
+            for (var i = 0; i < testArray.length; i++)
+            {
+                //Create opening bracket at beginning of array
+                if (i == 0) document.write("[");
+
+                //Print number in array
+                document.write(testArray[i]);
+
+                //Put comma after number if it is not the last in the sequence
+                if (i != testArray.length - 1) document.write(",");
+
+                //Create closing bracket at end of array
+                if (i == testArray.length - 1) document.write("]");
+            }
+
+            //Output end of result
+            document.write(" is " + totalInstances);
+
+        </script>
+    </body>
+</html>
